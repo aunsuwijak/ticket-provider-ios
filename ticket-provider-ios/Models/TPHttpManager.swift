@@ -40,7 +40,7 @@ class TPHttpManager {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey("square_app_token")
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey("square_app_type")
         
-        Alamofire.request(.GET, "https://ticket-provider-staging.herokuapp.com/api/v1/me", headers: ["Authorization": "\(tokenType): \(accessToken)"])
+        Alamofire.request(.GET, "https://ticket-provider-staging.herokuapp.com/api/v1/me", headers: ["Authorization": "\(tokenType) \(accessToken)"])
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
@@ -54,7 +54,7 @@ class TPHttpManager {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey("square_app_token")
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey("square_app_type")
         
-        Alamofire.request(.PUT, "https://ticket-provider-staging.herokuapp.com/api/v1/users" + "/\(id)", headers: ["Authorization": "\(tokenType): \(accessToken)"], parameters: user as? [String : AnyObject] )
+        Alamofire.request(.PUT, "https://ticket-provider-staging.herokuapp.com/api/v1/users" + "/\(id)", headers: ["Authorization": "\(tokenType) \(accessToken)"], parameters: user as? [String : AnyObject] )
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
@@ -68,7 +68,7 @@ class TPHttpManager {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey("square_app_token")
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey("square_app_type")
         
-        Alamofire.request(.GET, "https://ticket-provider-staging.herokuapp.com/api/v1/tickets", headers: ["Authorization": "\(tokenType!): \(accessToken!)"])
+        Alamofire.request(.GET, "https://ticket-provider-staging.herokuapp.com/api/v1/tickets", headers: ["Authorization": "\(tokenType!) \(accessToken!)"])
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
