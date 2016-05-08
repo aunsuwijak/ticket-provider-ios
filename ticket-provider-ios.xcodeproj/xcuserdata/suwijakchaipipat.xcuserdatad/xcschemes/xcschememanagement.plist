@@ -4,10 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ticket-provider-ios.xcscheme</key>
+		<key>ticket-provider-ios-appstore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>5</integer>
+		</dict>
+		<key>ticket-provider-ios-staging.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>ticket-provider-ios.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

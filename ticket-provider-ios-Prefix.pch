@@ -1,0 +1,15 @@
+//
+//  ticket-provider-ios-Prefix.pch
+//  
+//
+//  Created by Suwijak Chaipipat on 5/3/2559 BE.
+//
+//
+
+#ifndef ticket_provider_ios_Prefix_pch
+#define ticket_provider_ios_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ticket_provider_ios_Prefix_pch */
