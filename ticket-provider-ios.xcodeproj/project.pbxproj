@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6803B0F01CD8810400E390A8 /* TPHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803B0EF1CD8810400E390A8 /* TPHttpManager.swift */; };
+		68197F9F1CE19ED000C7555C /* TPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */; };
 		685412581CDFA7CC00F457AC /* TPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685412571CDFA7CC00F457AC /* TPConstants.swift */; };
 		68FE4F231CD65DAB0082621A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F221CD65DAB0082621A /* AppDelegate.swift */; };
-		68FE4F251CD65DAB0082621A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F241CD65DAB0082621A /* ViewController.swift */; };
+		68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */; };
 		68FE4F281CD65DAB0082621A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68FE4F261CD65DAB0082621A /* Main.storyboard */; };
 		68FE4F2A1CD65DAB0082621A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68FE4F291CD65DAB0082621A /* Assets.xcassets */; };
 		68FE4F2D1CD65DAB0082621A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68FE4F2B1CD65DAB0082621A /* LaunchScreen.storyboard */; };
@@ -20,10 +21,11 @@
 /* Begin PBXFileReference section */
 		300475074E282ED8ED2EABBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6803B0EF1CD8810400E390A8 /* TPHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPHttpManager.swift; path = Models/TPHttpManager.swift; sourceTree = "<group>"; };
+		68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPLoginViewController.swift; sourceTree = "<group>"; };
 		685412571CDFA7CC00F457AC /* TPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPConstants.swift; sourceTree = "<group>"; };
 		68FE4F1F1CD65DAB0082621A /* ticket-provider-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ticket-provider-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FE4F221CD65DAB0082621A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68FE4F241CD65DAB0082621A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TPSplashScreenViewController.swift; path = "ticket-provider-ios/Controllers/TPSplashScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
 		68FE4F271CD65DAB0082621A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68FE4F291CD65DAB0082621A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68FE4F2C1CD65DAB0082621A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		68197F9B1CE19E0D00C7555C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */,
+				68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		68FE4F161CD65DAB0082621A = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +95,10 @@
 		68FE4F211CD65DAB0082621A /* ticket-provider-ios */ = {
 			isa = PBXGroup;
 			children = (
+				68197F9B1CE19E0D00C7555C /* Controllers */,
 				685412571CDFA7CC00F457AC /* TPConstants.swift */,
 				68FE4F221CD65DAB0082621A /* AppDelegate.swift */,
 				6803B0EA1CD72A2500E390A8 /* Models */,
-				68FE4F241CD65DAB0082621A /* ViewController.swift */,
 				68FE4F261CD65DAB0082621A /* Main.storyboard */,
 				68FE4F291CD65DAB0082621A /* Assets.xcassets */,
 				68FE4F2B1CD65DAB0082621A /* LaunchScreen.storyboard */,
@@ -232,8 +243,9 @@
 			files = (
 				6803B0F01CD8810400E390A8 /* TPHttpManager.swift in Sources */,
 				685412581CDFA7CC00F457AC /* TPConstants.swift in Sources */,
-				68FE4F251CD65DAB0082621A /* ViewController.swift in Sources */,
+				68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */,
 				68FE4F231CD65DAB0082621A /* AppDelegate.swift in Sources */,
+				68197F9F1CE19ED000C7555C /* TPLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

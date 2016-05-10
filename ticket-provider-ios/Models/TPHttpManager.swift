@@ -36,16 +36,16 @@ class TPHttpManager {
         }
     }
     
-    func currentUser(successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (data: JSON) -> Void) {
+    func currentUser(successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (responseCode: Int) -> Void) {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
-        Alamofire.request(.GET, "\(TPConstants.BASE_URL)api/v1/me", headers: ["Authorization": "\(tokenType) \(accessToken)"])
+        Alamofire.request(.GET, "\(TPConstants.BASE_URL)api/v1/users/me", headers: ["Authorization": "\(tokenType) \(accessToken)"])
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
                 } else {
-                    errorBlock(data: JSON(response.result.value!))
+                    errorBlock(responseCode: (response.response?.statusCode)!)
                 }
         }
     }
