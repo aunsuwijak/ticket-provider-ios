@@ -13,13 +13,13 @@ import SwiftyJSON
 class TPHttpManager {
     static let sharedInstance = TPHttpManager();
     
-    func createAccessToken(params: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (data: JSON) -> Void) {
+    func createAccessToken(params: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: () -> Void) {
         Alamofire.request(.POST, "\(TPConstants.BASE_URL)oauth/token", parameters: params as? [String : AnyObject])
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
                 } else {
-                    errorBlock(data: JSON(response.result.value!))
+                    errorBlock()
                 }
         }
         
@@ -36,7 +36,7 @@ class TPHttpManager {
         }
     }
     
-    func currentUser(successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (responseCode: Int) -> Void) {
+    func currentUser(successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: () -> Void) {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
@@ -45,7 +45,7 @@ class TPHttpManager {
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
                 } else {
-                    errorBlock(responseCode: (response.response?.statusCode)!)
+                    errorBlock()
                 }
         }
     }
