@@ -66,6 +66,9 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 if responseCode == 200 {
+                    NSUserDefaults.standardUserDefaults().setObject("\(data["access_token"])", forKey: TPConstants.ACCESS_TOKEN)
+                    NSUserDefaults.standardUserDefaults().setObject("\(data["token_type"])", forKey: TPConstants.TOKEN_TYPE)
+                    
                     // TODO: Navigate to ticket list page.
                 } else  {
                     let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Login failed", subTitle: "Invalid email or password", dismissalDelay: 2)
