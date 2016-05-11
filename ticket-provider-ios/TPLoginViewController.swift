@@ -81,7 +81,6 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                     alert.show()
                 }
             }, errorBlock: {
-                responseCode in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Network error", subTitle: "Please check your internet connection", dismissalDelay: 2)
@@ -93,5 +92,13 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                 self.view.addSubview(alert)
                 alert.show()
         })
+    }
+    
+    @IBAction func navigateToSignup(sender: AnyObject) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPSignup") as! TPSignupViewController
+        
+        self.presentViewController(loginVC, animated: false, completion: nil)
     }
 }
