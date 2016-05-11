@@ -25,13 +25,13 @@ class TPHttpManager {
         
     }
     
-    func createUser(user: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (data: JSON) -> Void) {
+    func createUser(user: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: () -> Void) {
         Alamofire.request(.POST, "\(TPConstants.BASE_URL)api/v1/users", parameters: user as? [String : AnyObject] )
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
                 } else {
-                    errorBlock(data: JSON(response.result.value!))
+                    errorBlock()
                 }
         }
     }

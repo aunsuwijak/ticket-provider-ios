@@ -683,7 +683,7 @@
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -752,7 +752,7 @@
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -817,6 +817,9 @@
                                         <include reference="wF1-YJ-gbF"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signup:" destination="Vbg-SF-E0G" eventType="touchUpInside" id="i85-yE-Qlm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boJ-rq-GaV">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -936,6 +939,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="IPS-cP-fso" id="HVG-dd-VgP"/>
+                        <outlet property="emailTextField" destination="VkU-mX-9Nq" id="ix3-9y-25s"/>
+                        <outlet property="nameTextField" destination="R2H-TX-HNZ" id="mCC-2S-vpY"/>
+                        <outlet property="passwordTextField" destination="DvR-9O-hYA" id="iKA-qS-Svs"/>
                         <outlet property="signupButton" destination="wED-6V-CYz" id="VH0-Vk-zDe"/>
                     </connections>
                 </viewController>

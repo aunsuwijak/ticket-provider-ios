@@ -81,7 +81,6 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                     alert.show()
                 }
             }, errorBlock: {
-                responseCode in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Network error", subTitle: "Please check your internet connection", dismissalDelay: 2)
