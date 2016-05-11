@@ -94,4 +94,12 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                 alert.show()
         })
     }
+    
+    @IBAction func navigateToSignup(sender: AnyObject) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPSignup") as! TPSignupViewController
+        
+        self.presentViewController(loginVC, animated: false, completion: nil)
+    }
 }
