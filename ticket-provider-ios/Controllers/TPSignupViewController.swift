@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import JFMinimalNotifications
 
-class TPSignupViewController: UIViewController, JFMinimalNotificationDelegate {
+class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNotificationDelegate {
     
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,6 +24,22 @@ class TPSignupViewController: UIViewController, JFMinimalNotificationDelegate {
         self.signupButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.signupButton.layer.shadowOffset = CGSizeMake(2, 2)
         self.signupButton.layer.shadowOpacity = 0.2
+        
+        self.emailTextField.tag = 0
+        self.emailTextField.returnKeyType = UIReturnKeyType.Next
+        self.emailTextField.delegate = self
+        
+        self.nameTextField.tag = 1
+        self.nameTextField.returnKeyType = UIReturnKeyType.Next
+        self.nameTextField.delegate = self
+        
+        self.passwordTextField.tag = 2
+        self.passwordTextField.returnKeyType = UIReturnKeyType.Next
+        self.passwordTextField.delegate = self
+        
+        self.confirmPasswordTextField.tag = 3
+        self.confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
+        self.confirmPasswordTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,6 +47,23 @@ class TPSignupViewController: UIViewController, JFMinimalNotificationDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == self.confirmPasswordTextField.tag {
+            self.signup(self)
+            return true
+        } else if textField.tag == self.emailTextField.tag {
+            self.nameTextField.becomeFirstResponder()
+            return true
+        } else if textField.tag == self.nameTextField.tag {
+            self.passwordTextField.becomeFirstResponder()
+            return true
+        } else if textField.tag == self.passwordTextField.tag {
+            self.confirmPasswordTextField.becomeFirstResponder()
+            return true
+        }
+        return false;
+    }
+    
     @IBAction func navigateToLogin(sender: AnyObject) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
