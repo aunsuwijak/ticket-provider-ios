@@ -28,6 +28,10 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
         
         self.passwordTextField.returnKeyType = UIReturnKeyType.Go
         self.passwordTextField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TPLoginViewController.DismissKeyboard))
+        
+        self.view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,6 +48,10 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
             return true
         }
         return false;
+    }
+    
+    func DismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     @IBAction func login(sender: AnyObject) {

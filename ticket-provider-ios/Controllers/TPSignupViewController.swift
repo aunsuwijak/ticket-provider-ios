@@ -40,6 +40,10 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
         self.confirmPasswordTextField.tag = 3
         self.confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
         self.confirmPasswordTextField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TPSignupViewController.DismissKeyboard))
+        
+        self.view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,6 +66,10 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
             return true
         }
         return false;
+    }
+    
+    func DismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     @IBAction func navigateToLogin(sender: AnyObject) {
