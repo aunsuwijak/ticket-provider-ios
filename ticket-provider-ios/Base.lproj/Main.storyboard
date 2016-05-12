@@ -989,32 +989,72 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GN1-ye-0SU" userLabel="NameLabel">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.7843137255" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="93" y="32" width="275" height="17"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSc-Ii-BMv" userLabel="EmailLabel">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="0.94509803921568625" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="93" y="60.5" width="275" height="17"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="GN1-ye-0SU" firstAttribute="leading" secondItem="tmE-dT-hc4" secondAttribute="trailing" constant="16" id="4VC-O4-GoO"/>
+                                    <constraint firstItem="sSc-Ii-BMv" firstAttribute="leading" secondItem="tmE-dT-hc4" secondAttribute="trailing" constant="16" id="Bo5-d7-KuK"/>
                                     <constraint firstAttribute="height" constant="110" id="GEx-HX-dGN"/>
+                                    <constraint firstAttribute="trailing" secondItem="GN1-ye-0SU" secondAttribute="trailing" constant="32" id="L5r-1F-p5u"/>
+                                    <constraint firstItem="GN1-ye-0SU" firstAttribute="top" secondItem="tmE-dT-hc4" secondAttribute="top" id="NeA-Cd-DU7"/>
                                     <constraint firstItem="tmE-dT-hc4" firstAttribute="centerY" secondItem="MPs-4k-pwn" secondAttribute="centerY" id="Uyu-T4-MuJ"/>
+                                    <constraint firstItem="sSc-Ii-BMv" firstAttribute="bottom" secondItem="tmE-dT-hc4" secondAttribute="bottom" id="hpU-Fh-zDt"/>
                                     <constraint firstItem="tmE-dT-hc4" firstAttribute="leading" secondItem="MPs-4k-pwn" secondAttribute="leading" constant="16" id="mAZ-Xg-f2q">
                                         <variation key="heightClass=regular-widthClass=compact" constant="32"/>
                                     </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="sSc-Ii-BMv" secondAttribute="trailing" constant="32" id="zp2-Hu-RU8"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="tmE-dT-hc4"/>
+                                        <exclude reference="GN1-ye-0SU"/>
+                                        <exclude reference="sSc-Ii-BMv"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="GEx-HX-dGN"/>
                                         <exclude reference="Uyu-T4-MuJ"/>
                                         <exclude reference="mAZ-Xg-f2q"/>
+                                        <exclude reference="4VC-O4-GoO"/>
+                                        <exclude reference="L5r-1F-p5u"/>
+                                        <exclude reference="NeA-Cd-DU7"/>
+                                        <exclude reference="Bo5-d7-KuK"/>
+                                        <exclude reference="hpU-Fh-zDt"/>
+                                        <exclude reference="zp2-Hu-RU8"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="tmE-dT-hc4"/>
+                                        <include reference="GN1-ye-0SU"/>
+                                        <include reference="sSc-Ii-BMv"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="GEx-HX-dGN"/>
                                         <include reference="Uyu-T4-MuJ"/>
                                         <include reference="mAZ-Xg-f2q"/>
+                                        <include reference="4VC-O4-GoO"/>
+                                        <include reference="L5r-1F-p5u"/>
+                                        <include reference="NeA-Cd-DU7"/>
+                                        <include reference="Bo5-d7-KuK"/>
+                                        <include reference="hpU-Fh-zDt"/>
+                                        <include reference="zp2-Hu-RU8"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1055,6 +1095,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="sSc-Ii-BMv" id="wT0-ek-8xf"/>
+                        <outlet property="nameLabel" destination="GN1-ye-0SU" id="kMk-rp-occ"/>
                         <outlet property="profileIcon" destination="tmE-dT-hc4" id="HwQ-UK-GJH"/>
                     </connections>
                 </viewController>

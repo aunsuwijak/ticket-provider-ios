@@ -11,6 +11,23 @@ import UIKit
 class TPSidedrawerViewController: UIViewController {
     
     @IBOutlet weak var profileIcon: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    override func viewDidLoad() {
+        TPHttpManager.sharedInstance.currentUser(
+            {
+                responseCode, data in
+                if responseCode == 200 {
+                    self.nameLabel.text = "\(data["user"]["name"])"
+                    self.emailLabel.text = "\(data["user"]["email"])"
+                } else {
+                    // TODO: Handle this error
+                }
+            }, errorBlock: {
+                // TODO: Handle this error
+        })
+    }
     
     override func viewDidAppear(animated: Bool) {
         self.profileIcon.layer.cornerRadius = self.profileIcon.frame.size.height / 2
