@@ -471,6 +471,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="IQLayoutGuideConstraint" destination="u9Q-Ty-y7X" id="TFK-PA-fdJ"/>
                         <outlet property="emailTextField" destination="vU1-UT-SVc" id="sRO-Cc-pJV"/>
                         <outlet property="loginButton" destination="bZF-0G-8VR" id="eVI-Uc-HDh"/>
                         <outlet property="passwordTextField" destination="9CF-Wu-Lyt" id="7t8-s4-0C4"/>
@@ -940,6 +941,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="IQLayoutGuideConstraint" destination="I9b-Ol-NNp" id="ICt-jZ-pkO"/>
                         <outlet property="confirmPasswordTextField" destination="IPS-cP-fso" id="HVG-dd-VgP"/>
                         <outlet property="emailTextField" destination="VkU-mX-9Nq" id="ix3-9y-25s"/>
                         <outlet property="nameTextField" destination="R2H-TX-HNZ" id="mCC-2S-vpY"/>

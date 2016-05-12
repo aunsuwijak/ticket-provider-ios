@@ -9,4 +9,5 @@ pod 'Alamofire', '~> 3.3'
 pod 'SwiftyJSON', '~> 2.3'
 pod 'MBProgressHUD', '~> 0.9.2'
 pod 'JFMinimalNotifications', '~> 0.0.7'
+pod 'IQKeyboardManagerSwift', '4.0.2'
 
