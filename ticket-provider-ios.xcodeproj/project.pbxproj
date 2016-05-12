@@ -10,6 +10,9 @@
 		6803B0F01CD8810400E390A8 /* TPHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803B0EF1CD8810400E390A8 /* TPHttpManager.swift */; };
 		68197F9F1CE19ED000C7555C /* TPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */; };
 		685412581CDFA7CC00F457AC /* TPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685412571CDFA7CC00F457AC /* TPConstants.swift */; };
+		6863C4F91CE4790500B53958 /* TPSidedrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */; };
+		6863C4FB1CE47BF700B53958 /* TPSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */; };
+		6863C4FD1CE485CB00B53958 /* TPTicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */; };
 		68C119D61CE302ED00F47280 /* TPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C119D51CE302ED00F47280 /* TPSignupViewController.swift */; };
 		68FE4F231CD65DAB0082621A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F221CD65DAB0082621A /* AppDelegate.swift */; };
 		68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */; };
@@ -22,8 +25,11 @@
 /* Begin PBXFileReference section */
 		300475074E282ED8ED2EABBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6803B0EF1CD8810400E390A8 /* TPHttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPHttpManager.swift; path = Models/TPHttpManager.swift; sourceTree = "<group>"; };
-		68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPLoginViewController.swift; sourceTree = "<group>"; };
+		68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPLoginViewController.swift; path = Controllers/TPLoginViewController.swift; sourceTree = "<group>"; };
 		685412571CDFA7CC00F457AC /* TPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPConstants.swift; sourceTree = "<group>"; };
+		6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSidedrawerViewController.swift; path = Controllers/TPSidedrawerViewController.swift; sourceTree = "<group>"; };
+		6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSlideMenuController.swift; path = Controllers/TPSlideMenuController.swift; sourceTree = "<group>"; };
+		6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPTicketListViewController.swift; path = Controllers/TPTicketListViewController.swift; sourceTree = "<group>"; };
 		68C119D51CE302ED00F47280 /* TPSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSignupViewController.swift; path = Controllers/TPSignupViewController.swift; sourceTree = "<group>"; };
 		68FE4F1F1CD65DAB0082621A /* ticket-provider-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ticket-provider-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FE4F221CD65DAB0082621A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +79,9 @@
 				68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */,
 				68197F9E1CE19ED000C7555C /* TPLoginViewController.swift */,
 				68C119D51CE302ED00F47280 /* TPSignupViewController.swift */,
+				6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */,
+				6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */,
+				6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,8 +254,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				68C119D61CE302ED00F47280 /* TPSignupViewController.swift in Sources */,
+				6863C4FD1CE485CB00B53958 /* TPTicketListViewController.swift in Sources */,
+				6863C4F91CE4790500B53958 /* TPSidedrawerViewController.swift in Sources */,
 				6803B0F01CD8810400E390A8 /* TPHttpManager.swift in Sources */,
 				685412581CDFA7CC00F457AC /* TPConstants.swift in Sources */,
+				6863C4FB1CE47BF700B53958 /* TPSlideMenuController.swift in Sources */,
 				68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */,
 				68FE4F231CD65DAB0082621A /* AppDelegate.swift in Sources */,
 				68197F9F1CE19ED000C7555C /* TPLoginViewController.swift in Sources */,

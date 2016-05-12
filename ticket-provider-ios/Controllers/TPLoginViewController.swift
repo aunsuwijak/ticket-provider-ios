@@ -19,6 +19,8 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.hidden = true
+        
         self.loginButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.loginButton.layer.shadowOffset = CGSizeMake(2, 2)
         self.loginButton.layer.shadowOpacity = 0.2
@@ -54,6 +56,14 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
         self.view.endEditing(true)
     }
     
+    func navigateToTicketList() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let ticketListVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketList") as! TPTicketListViewController
+        
+        self.navigationController?.pushViewController(ticketListVC, animated: false)
+    }
+    
     @IBAction func login(sender: AnyObject) {
         let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         loadingNotification.mode = MBProgressHUDMode.Indeterminate
@@ -77,7 +87,7 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
                     NSUserDefaults.standardUserDefaults().setObject("\(data["access_token"])", forKey: TPConstants.ACCESS_TOKEN)
                     NSUserDefaults.standardUserDefaults().setObject("\(data["token_type"])", forKey: TPConstants.TOKEN_TYPE)
                     
-                    // TODO: Navigate to ticket list page.
+                    self.navigateToTicketList()
                 } else  {
                     let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Login failed", subTitle: "Invalid email or password", dismissalDelay: 2)
                     alert.setTitleFont(UIFont.systemFontOfSize(22.0))
@@ -105,8 +115,8 @@ class TPLoginViewController: UIViewController, UITextFieldDelegate, JFMinimalNot
     @IBAction func navigateToSignup(sender: AnyObject) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPSignup") as! TPSignupViewController
+        let signupVC = storyBoard.instantiateViewControllerWithIdentifier("TPSignup") as! TPSignupViewController
         
-        self.presentViewController(loginVC, animated: false, completion: nil)
+        self.navigationController?.pushViewController(signupVC, animated: false)
     }
 }

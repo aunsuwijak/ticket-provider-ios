@@ -15,19 +15,32 @@ class TPSplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.hidden = true
+        
         self.progressBar?.setProgress(Float(0), animated: false)
         
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(TPSplashScreenViewController.updateProgress), userInfo: nil, repeats: true)
         
-        TPHttpManager.sharedInstance.currentUser({
-            responseCode, data in
+        
+        let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
+        let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
+        
+        if accessToken != nil && tokenType != nil {
             
-            // TODO: Navigate to ticket list page.
-        }, errorBlock: {
-            responseCode in
-            
+            TPHttpManager.sharedInstance.currentUser({
+                responseCode, data in
+                
+                    self.navigateToTicketList()
+                
+                }, errorBlock: {
+                
+                responseCode in
+                    
+                    self.navigateToLogin()
+            })
+        } else {
             self.navigateToLogin()
-        })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +53,15 @@ class TPSplashScreenViewController: UIViewController {
         
         let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPLogin") as! TPLoginViewController
         
-        self.presentViewController(loginVC, animated: false, completion: nil)
+        self.navigationController?.pushViewController(loginVC, animated: false)
+    }
+    
+    func navigateToTicketList() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let ticketListVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketList") as! TPTicketListViewController
+        
+        self.navigationController?.pushViewController(ticketListVC, animated: false)
     }
     
     func updateProgress() {

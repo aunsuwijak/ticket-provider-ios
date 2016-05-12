@@ -10,7 +10,7 @@
         <!--Splash Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TPSplashScreenViewController" customModule="ticket_provider_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TPSplash" id="BYZ-38-t0r" customClass="TPSplashScreenViewController" customModule="ticket_provider_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -953,12 +953,139 @@
             </objects>
             <point key="canvasLocation" x="1924.5" y="270.75"/>
         </scene>
+        <!--Sidedrawer View Controller-->
+        <scene sceneID="Y0A-jI-2ba">
+            <objects>
+                <viewController storyboardIdentifier="TPSidedrawer" id="HOr-G2-Yut" customClass="TPSidedrawerViewController" customModule="ticket_provider_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7V-6b-o3N"/>
+                        <viewControllerLayoutGuide type="bottom" id="aJm-N6-I5u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ReH-op-vMa">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-4k-pwn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-dT-hc4">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="RJs-7u-Tu5"/>
+                                            <constraint firstAttribute="height" constant="45" id="ftX-oh-VGy"/>
+                                            <constraint firstAttribute="height" constant="45" id="zM3-ro-O2S"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="RJs-7u-Tu5"/>
+                                                <exclude reference="ftX-oh-VGy"/>
+                                                <exclude reference="zM3-ro-O2S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="RJs-7u-Tu5"/>
+                                                <include reference="ftX-oh-VGy"/>
+                                                <exclude reference="zM3-ro-O2S"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="GEx-HX-dGN"/>
+                                    <constraint firstItem="tmE-dT-hc4" firstAttribute="centerY" secondItem="MPs-4k-pwn" secondAttribute="centerY" id="Uyu-T4-MuJ"/>
+                                    <constraint firstItem="tmE-dT-hc4" firstAttribute="leading" secondItem="MPs-4k-pwn" secondAttribute="leading" constant="16" id="mAZ-Xg-f2q">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="tmE-dT-hc4"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="GEx-HX-dGN"/>
+                                        <exclude reference="Uyu-T4-MuJ"/>
+                                        <exclude reference="mAZ-Xg-f2q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="tmE-dT-hc4"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="GEx-HX-dGN"/>
+                                        <include reference="Uyu-T4-MuJ"/>
+                                        <include reference="mAZ-Xg-f2q"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MPs-4k-pwn" firstAttribute="width" secondItem="ReH-op-vMa" secondAttribute="width" id="8Ml-0M-V4K"/>
+                            <constraint firstItem="MPs-4k-pwn" firstAttribute="top" secondItem="O7V-6b-o3N" secondAttribute="bottom" id="B95-lk-Vh4"/>
+                            <constraint firstItem="MPs-4k-pwn" firstAttribute="leading" secondItem="ReH-op-vMa" secondAttribute="leadingMargin" id="G4I-UI-etP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MPs-4k-pwn" secondAttribute="trailing" constant="88" id="VDX-C0-M9l">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="MPs-4k-pwn" firstAttribute="centerX" secondItem="ReH-op-vMa" secondAttribute="centerX" id="Z42-W2-QTo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MPs-4k-pwn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8Ml-0M-V4K"/>
+                                <exclude reference="B95-lk-Vh4"/>
+                                <exclude reference="G4I-UI-etP"/>
+                                <exclude reference="VDX-C0-M9l"/>
+                                <exclude reference="Z42-W2-QTo"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MPs-4k-pwn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8Ml-0M-V4K"/>
+                                <include reference="B95-lk-Vh4"/>
+                                <exclude reference="G4I-UI-etP"/>
+                                <exclude reference="VDX-C0-M9l"/>
+                                <include reference="Z42-W2-QTo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="profileIcon" destination="tmE-dT-hc4" id="HwQ-UK-GJH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxs-pa-g0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755.5" y="270.75"/>
+        </scene>
+        <!--Ticket List View Controller-->
+        <scene sceneID="Scg-e6-ljy">
+            <objects>
+                <viewController storyboardIdentifier="TPTicketList" id="R2g-h4-xB9" customClass="TPTicketListViewController" customModule="ticket_provider_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uf9-xl-seT"/>
+                        <viewControllerLayoutGuide type="bottom" id="tdA-TV-3iL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wdc-en-Umo">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ibs-tt-3VO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3580.5" y="270.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="360" height="640"/>
         <image name="EmailIcon" width="42" height="36"/>
         <image name="LockIcon" width="36" height="48"/>
         <image name="Logo" width="512" height="512"/>
+        <image name="ProfileIcon" width="186" height="186"/>
         <image name="TagIcon" width="42" height="42"/>
     </resources>
 </document>
