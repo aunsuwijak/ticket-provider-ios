@@ -13,6 +13,7 @@
 		6863C4F91CE4790500B53958 /* TPSidedrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */; };
 		6863C4FB1CE47BF700B53958 /* TPSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */; };
 		6863C4FD1CE485CB00B53958 /* TPTicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */; };
+		6863C4FF1CE4BFCD00B53958 /* TPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6863C4FE1CE4BFCC00B53958 /* TPProfileViewController.swift */; };
 		68C119D61CE302ED00F47280 /* TPSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C119D51CE302ED00F47280 /* TPSignupViewController.swift */; };
 		68FE4F231CD65DAB0082621A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F221CD65DAB0082621A /* AppDelegate.swift */; };
 		68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4F241CD65DAB0082621A /* TPSplashScreenViewController.swift */; };
@@ -30,6 +31,7 @@
 		6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSidedrawerViewController.swift; path = Controllers/TPSidedrawerViewController.swift; sourceTree = "<group>"; };
 		6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSlideMenuController.swift; path = Controllers/TPSlideMenuController.swift; sourceTree = "<group>"; };
 		6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPTicketListViewController.swift; path = Controllers/TPTicketListViewController.swift; sourceTree = "<group>"; };
+		6863C4FE1CE4BFCC00B53958 /* TPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPProfileViewController.swift; path = Controllers/TPProfileViewController.swift; sourceTree = "<group>"; };
 		68C119D51CE302ED00F47280 /* TPSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TPSignupViewController.swift; path = Controllers/TPSignupViewController.swift; sourceTree = "<group>"; };
 		68FE4F1F1CD65DAB0082621A /* ticket-provider-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ticket-provider-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FE4F221CD65DAB0082621A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				6863C4F81CE4790500B53958 /* TPSidedrawerViewController.swift */,
 				6863C4FA1CE47BF700B53958 /* TPSlideMenuController.swift */,
 				6863C4FC1CE485CB00B53958 /* TPTicketListViewController.swift */,
+				6863C4FE1CE4BFCC00B53958 /* TPProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				6863C4FD1CE485CB00B53958 /* TPTicketListViewController.swift in Sources */,
 				6863C4F91CE4790500B53958 /* TPSidedrawerViewController.swift in Sources */,
 				6803B0F01CD8810400E390A8 /* TPHttpManager.swift in Sources */,
+				6863C4FF1CE4BFCD00B53958 /* TPProfileViewController.swift in Sources */,
 				685412581CDFA7CC00F457AC /* TPConstants.swift in Sources */,
 				6863C4FB1CE47BF700B53958 /* TPSlideMenuController.swift in Sources */,
 				68FE4F251CD65DAB0082621A /* TPSplashScreenViewController.swift in Sources */,

@@ -14,7 +14,18 @@ class TPSidedrawerViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    var profileViewController: UIViewController!
+    var ticketListViewController: UIViewController!
+    
     override func viewDidLoad() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let profileVC = storyBoard.instantiateViewControllerWithIdentifier("TPProfile") as! TPProfileViewController
+        let ticketListVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketList") as! TPTicketListViewController
+        
+        self.profileViewController = UINavigationController(rootViewController: profileVC)
+        self.ticketListViewController = UINavigationController(rootViewController: ticketListVC)
+        
         TPHttpManager.sharedInstance.currentUser(
             {
                 responseCode, data in
@@ -33,5 +44,18 @@ class TPSidedrawerViewController: UIViewController {
         self.profileIcon.layer.cornerRadius = self.profileIcon.frame.size.height / 2
         self.profileIcon.layer.masksToBounds = true
         self.profileIcon.layer.borderWidth = 0
+    }
+    
+    @IBAction func navigateToProfile(sender: AnyObject) {
+        self.slideMenuController()?.changeMainViewController(self.profileViewController, close: true)
+    }
+    
+    
+    @IBAction func navigateToMyTickets(sender: AnyObject) {
+        self.slideMenuController()?.changeMainViewController(self.ticketListViewController, close: true)
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        
     }
 }

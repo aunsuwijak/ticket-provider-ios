@@ -87,7 +87,7 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
         
         let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPLogin") as! TPLoginViewController
         
-        self.presentViewController(loginVC, animated: false, completion: nil)
+        self.navigationController?.pushViewController(loginVC, animated: false)
     }
     
     @IBAction func signup(sender: AnyObject) {

@@ -9,6 +9,6 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class TPSlideMenuController : SlideMenuController {
+class TPSlideMenuController: SlideMenuController {
     
 }
