@@ -16,15 +16,18 @@ class TPSidedrawerViewController: UIViewController {
     
     var profileViewController: UIViewController!
     var ticketListViewController: UIViewController!
+    var splashScreenViewController: UIViewController!
     
     override func viewDidLoad() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         let profileVC = storyBoard.instantiateViewControllerWithIdentifier("TPProfile") as! TPProfileViewController
         let ticketListVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketList") as! TPTicketListViewController
+        let splashVC = storyBoard.instantiateViewControllerWithIdentifier("TPSplash") as! TPSplashScreenViewController
         
         self.profileViewController = UINavigationController(rootViewController: profileVC)
         self.ticketListViewController = UINavigationController(rootViewController: ticketListVC)
+        self.splashScreenViewController = UINavigationController(rootViewController: splashVC)
         
         TPHttpManager.sharedInstance.currentUser(
             {
@@ -56,6 +59,9 @@ class TPSidedrawerViewController: UIViewController {
     }
     
     @IBAction func logout(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(TPConstants.ACCESS_TOKEN)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(TPConstants.TOKEN_TYPE)
         
+        self.slideMenuController()?.changeMainViewController(self.splashScreenViewController, close: true)
     }
 }
