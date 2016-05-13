@@ -40,7 +40,7 @@ class TPHttpManager {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
-        Alamofire.request(.GET, "\(TPConstants.BASE_URL)api/v1/users/me", headers: ["Authorization": "\(tokenType) \(accessToken)"])
+        Alamofire.request(.GET, "\(TPConstants.BASE_URL)api/v1/users/me", headers: ["Authorization": "\(tokenType!) \(accessToken!)"])
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
@@ -54,7 +54,7 @@ class TPHttpManager {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
-        Alamofire.request(.PUT, "\(TPConstants.BASE_URL)api/v1/users" + "/\(id)", headers: ["Authorization": "\(tokenType) \(accessToken)"], parameters: user as? [String : AnyObject] )
+        Alamofire.request(.PUT, "\(TPConstants.BASE_URL)api/v1/users" + "/\(id)", headers: ["Authorization": "\(tokenType!) \(accessToken!)"], parameters: user as? [String : AnyObject] )
             .responseJSON { response in
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))

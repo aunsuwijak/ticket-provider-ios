@@ -21,6 +21,8 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.hidden = true
+        
         self.signupButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.signupButton.layer.shadowOffset = CGSizeMake(2, 2)
         self.signupButton.layer.shadowOpacity = 0.2
@@ -72,12 +74,20 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
         self.view.endEditing(true)
     }
     
+    func navigateToTicketList() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let ticketListVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketList") as! TPTicketListViewController
+        
+        self.navigationController?.pushViewController(ticketListVC, animated: false)
+    }
+    
     @IBAction func navigateToLogin(sender: AnyObject) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         let loginVC = storyBoard.instantiateViewControllerWithIdentifier("TPLogin") as! TPLoginViewController
         
-        self.presentViewController(loginVC, animated: false, completion: nil)
+        self.navigationController?.pushViewController(loginVC, animated: false)
     }
     
     @IBAction func signup(sender: AnyObject) {
@@ -112,7 +122,7 @@ class TPSignupViewController: UIViewController, UITextFieldDelegate, JFMinimalNo
                                 NSUserDefaults.standardUserDefaults().setObject("\(data["access_token"])", forKey: TPConstants.ACCESS_TOKEN)
                                 NSUserDefaults.standardUserDefaults().setObject("\(data["token_type"])", forKey: TPConstants.TOKEN_TYPE)
                                 
-                                // TODO: Navigate to ticket list page.
+                                self.navigateToTicketList()
                             } else {
                                 
                             }
