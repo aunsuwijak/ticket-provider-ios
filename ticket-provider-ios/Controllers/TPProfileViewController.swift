@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
+import JFMinimalNotifications
 
-class TPProfileViewController: UIViewController, UITextFieldDelegate {
+class TPProfileViewController: UIViewController, UITextFieldDelegate, JFMinimalNotificationDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthdateTextField: UITextField!
     @IBOutlet weak var currentPasswordTextField: UITextField!
@@ -50,6 +53,18 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TPLoginViewController.DismissKeyboard))
         
         self.view.addGestureRecognizer(tap)
+        
+        TPHttpManager.sharedInstance.currentUser({
+            responseCode, data in
+                if responseCode == 200 {
+                    self.nameLabel.text = "\(data["user"]["name"])"
+                    self.emailLabel.text = "\(data["user"]["email"])"
+                } else {
+                    // TODO: Handle this error
+                }
+            }, errorBlock: {
+                // TODO: Handle this error
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -94,5 +109,83 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func updateUser(sender: AnyObject) {
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        
+        let name = self.nameTextField.text
+        let birthdate = self.birthdateTextField.text
+        let currentPassword = self.currentPasswordTextField.text
+        let newPassword = self.newPasswordTextField.text
+        let confirmNewPassword = self.confirmPasswordTextField.text
+        
+        TPHttpManager.sharedInstance.currentUser({
+            responseCode, data in
+            
+            TPHttpManager.sharedInstance.updateUser(
+                "\(data["user"]["id"])",
+                user: [
+                    "user": [
+                        "name": name!,
+                        "birthdate": birthdate!,
+                        "current_password": currentPassword!,
+                        "password": newPassword!,
+                        "password_confirmation": confirmNewPassword!
+                    ]
+                ],
+                successBlock: {
+                    responseCode, data in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                    
+                    if responseCode == 200 {
+                        self.nameLabel.text = "\(data["user"]["name"])"
+                        let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Success, title: "Success", subTitle: "User information has been updated", dismissalDelay: 2)
+                        alert.setTitleFont(UIFont.systemFontOfSize(22.0))
+                        
+                        alert.edgePadding = UIEdgeInsetsMake(70, 10, 10, 10);
+                        alert.presentFromTop = true
+                        alert.delegate = self;
+                        self.view.addSubview(alert)
+                        alert.show()
+                        
+                        // Reset all field to empty string
+                        self.nameTextField.text = ""
+                        self.birthdateTextField.text = ""
+                        self.currentPasswordTextField.text = ""
+                        self.newPasswordTextField.text = ""
+                        self.confirmPasswordTextField.text = ""
+                    } else {
+                        let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "User update failed", subTitle: "\(data["errors"][0])", dismissalDelay: 2)
+                        alert.setTitleFont(UIFont.systemFontOfSize(22.0))
+                        
+                        alert.edgePadding = UIEdgeInsetsMake(70, 10, 10, 10);
+                        alert.presentFromTop = true
+                        alert.delegate = self;
+                        self.view.addSubview(alert)
+                        alert.show()
+                    }
+                },
+                errorBlock: {
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                    
+                    let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Network error", subTitle: "Please check your internet connection", dismissalDelay: 2)
+                    alert.setTitleFont(UIFont.systemFontOfSize(22.0))
+                    
+                    alert.edgePadding = UIEdgeInsetsMake(70, 10, 10, 10);
+                    alert.presentFromTop = true
+                    alert.delegate = self;
+                    self.view.addSubview(alert)
+                    alert.show()
+                })
+            }, errorBlock: {MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+                let alert = JFMinimalNotification(style: JFMinimalNotificationStyle.Error, title: "Network error", subTitle: "Please check your internet connection", dismissalDelay: 2)
+                alert.setTitleFont(UIFont.systemFontOfSize(22.0))
+                
+                alert.edgePadding = UIEdgeInsetsMake(70, 10, 10, 10);
+                alert.presentFromTop = true
+                alert.delegate = self;
+                self.view.addSubview(alert)
+                alert.show()
+        })
     }
 }

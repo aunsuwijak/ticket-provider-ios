@@ -1375,13 +1375,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suwijak Chaipipat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzw-HL-VFW" userLabel="NameLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzw-HL-VFW" userLabel="NameLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ppnk2537@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSb-LA-35j" userLabel="EmailLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSb-LA-35j" userLabel="EmailLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1794,6 +1794,7 @@
                         <outlet property="birthdateTextField" destination="SQH-1u-3V6" id="7Tr-w2-ODQ"/>
                         <outlet property="confirmPasswordTextField" destination="tPo-18-s2E" id="d7X-cp-QkJ"/>
                         <outlet property="currentPasswordTextField" destination="hpa-iB-Qo5" id="MOO-eI-BVA"/>
+                        <outlet property="emailLabel" destination="PSb-LA-35j" id="HZe-Zh-iOg"/>
                         <outlet property="nameLabel" destination="nzw-HL-VFW" id="aOv-tI-MmV"/>
                         <outlet property="nameTextField" destination="DTR-IU-S3B" id="Ewc-Sa-YNJ"/>
                         <outlet property="newPasswordTextField" destination="0jI-Xz-xdb" id="u6I-o5-VNm"/>

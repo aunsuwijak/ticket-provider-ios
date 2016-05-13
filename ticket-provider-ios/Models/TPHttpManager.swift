@@ -50,7 +50,7 @@ class TPHttpManager {
         }
     }
     
-    func updateUser(id: Int, user: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: (data: JSON) -> Void) {
+    func updateUser(id: NSString, user: NSDictionary, successBlock: (responseCode: Int, data: JSON) -> Void, errorBlock: () -> Void) {
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
@@ -59,7 +59,7 @@ class TPHttpManager {
                 if response.result.isSuccess {
                     successBlock(responseCode: (response.response?.statusCode)!, data: JSON(response.result.value!))
                 } else {
-                    errorBlock(data: JSON(response.result.value!))
+                    errorBlock()
                 }
         }
     }
