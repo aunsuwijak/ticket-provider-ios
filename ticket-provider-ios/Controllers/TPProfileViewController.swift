@@ -31,20 +31,25 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.returnKeyType = UIReturnKeyType.Next
         self.nameTextField.delegate = self
         
+        self.birthdateTextField.tag = 1
         self.birthdateTextField.returnKeyType = UIReturnKeyType.Next
         self.birthdateTextField.delegate = self
         
-        self.currentPasswordTextField.tag = 1
+        self.currentPasswordTextField.tag = 2
         self.currentPasswordTextField.returnKeyType = UIReturnKeyType.Next
         self.currentPasswordTextField.delegate = self
         
-        self.newPasswordTextField.tag = 2
+        self.newPasswordTextField.tag = 3
         self.newPasswordTextField.returnKeyType = UIReturnKeyType.Next
         self.newPasswordTextField.delegate = self
         
-        self.confirmPasswordTextField.tag = 3
+        self.confirmPasswordTextField.tag = 4
         self.confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
         self.confirmPasswordTextField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TPLoginViewController.DismissKeyboard))
+        
+        self.view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,6 +82,10 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func DismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     func handleDatePicker(sender: UIDatePicker) {
         let timeFormatter = NSDateFormatter()
         timeFormatter.dateStyle = .NoStyle
@@ -85,6 +94,5 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func updateUser(sender: AnyObject) {
-        
     }
 }
