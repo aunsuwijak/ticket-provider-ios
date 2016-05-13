@@ -31,19 +31,18 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.returnKeyType = UIReturnKeyType.Next
         self.nameTextField.delegate = self
         
-        self.birthdateTextField.tag = 1
         self.birthdateTextField.returnKeyType = UIReturnKeyType.Next
         self.birthdateTextField.delegate = self
         
-        self.currentPasswordTextField.tag = 2
+        self.currentPasswordTextField.tag = 1
         self.currentPasswordTextField.returnKeyType = UIReturnKeyType.Next
         self.currentPasswordTextField.delegate = self
         
-        self.newPasswordTextField.tag = 3
+        self.newPasswordTextField.tag = 2
         self.newPasswordTextField.returnKeyType = UIReturnKeyType.Next
         self.newPasswordTextField.delegate = self
         
-        self.confirmPasswordTextField.tag = 4
+        self.confirmPasswordTextField.tag = 3
         self.confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
         self.confirmPasswordTextField.delegate = self
     }
@@ -52,12 +51,18 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
         self.addLeftBarButtonWithImage(UIImage(named: "HamburgerIcon")!)
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField.tag == self.birthdateTextField.tag {
+            let datePickerView  : UIDatePicker = UIDatePicker()
+            datePickerView.datePickerMode = UIDatePickerMode.Time
+            textField.inputView = datePickerView
+            datePickerView.addTarget(self, action: #selector(TPProfileViewController.handleDatePicker(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == self.nameTextField.tag {
             self.birthdateTextField.becomeFirstResponder()
-            return true
-        } else if textField.tag == self.birthdateTextField.tag {
-            self.currentPasswordTextField.becomeFirstResponder()
             return true
         } else if textField.tag == self.currentPasswordTextField.tag {
             self.newPasswordTextField.becomeFirstResponder()
@@ -70,6 +75,13 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         return false
+    }
+    
+    func handleDatePicker(sender: UIDatePicker) {
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateStyle = .NoStyle
+        timeFormatter.timeStyle = .ShortStyle
+        self.birthdateTextField.text = timeFormatter.stringFromDate(sender.date)
     }
     
     @IBAction func updateUser(sender: AnyObject) {
