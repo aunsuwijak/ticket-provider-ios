@@ -65,8 +65,8 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
             formatter.dateFormat = "dd MMMM yyyy"
             cell.activityDateLabel?.text = formatter.stringFromDate(activityDate!)
             
-            let imageURL = NSURL(string: "\(ticket["ticket_type_image_url"])")!
-            cell.backgroundImage.af_setImageWithURL(imageURL)
+            let imageUrl = NSURL(string: "\(ticket["ticket_type_image_url"])")!
+            cell.backgroundImage.af_setImageWithURL(imageUrl)
         }
         
         return cell
@@ -74,5 +74,23 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 96
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = indexPath.row
+        
+        if let ticket = self.tickets?[row] {
+            self.navigateToTicketShow(ticket)
+        }
+    }
+    
+    func navigateToTicketShow(ticket: JSON) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let ticketShowVC = storyBoard.instantiateViewControllerWithIdentifier("TPTicketShow") as! TPTicketShowViewController
+        
+        ticketShowVC.ticket = ticket
+        
+        self.navigationController?.pushViewController(ticketShowVC, animated: false)
     }
 }
