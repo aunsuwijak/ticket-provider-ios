@@ -58,7 +58,12 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
         let row = indexPath.row
         if let ticket = self.tickets?[row] {
             cell.activityNameLabel?.text = "\(ticket["activity_name"])"
-            cell.activityDateLabel?.text = "\(ticket["activity_date"])"
+            
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            let activityDate = formatter.dateFromString("\(ticket["activity_date"])")
+            formatter.dateFormat = "dd MMMM yyyy"
+            cell.activityDateLabel?.text = formatter.stringFromDate(activityDate!)
             
             let imageURL = NSURL(string: "\(ticket["ticket_type_image_url"])")!
             cell.backgroundImage.af_setImageWithURL(imageURL)
