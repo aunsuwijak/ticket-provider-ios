@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import AlamofireImage
 
 class TPTicketListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -58,6 +59,9 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
         if let ticket = self.tickets?[row] {
             cell.activityNameLabel?.text = "\(ticket["activity_name"])"
             cell.activityDateLabel?.text = "\(ticket["activity_date"])"
+            
+            let imageURL = NSURL(string: "\(ticket["ticket_type_image_url"])")!
+            cell.backgroundImage.af_setImageWithURL(imageURL)
         }
         
         return cell
