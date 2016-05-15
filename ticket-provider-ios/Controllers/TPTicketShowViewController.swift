@@ -38,8 +38,11 @@ class TPTicketShowViewController: UIViewController {
         let activityDate = formatter.dateFromString("\(ticket!["activity_date"])")
         formatter.dateFormat = "dd MMMM yyyy"
         self.ticketDateLabel.text = formatter.stringFromDate(activityDate!)
+        
+        self.navigationController?.navigationBar.backItem?.title = ""
+        self.title = "\(ticket!["activity_name"])"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
