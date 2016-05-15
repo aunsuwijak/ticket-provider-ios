@@ -23,6 +23,7 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
         
         self.ticketListTableView.delegate = self
         self.ticketListTableView.dataSource = self
+        self.ticketListTableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         TPHttpManager.sharedInstance.retrieveTickets({
             responseCode, data in
@@ -51,13 +52,18 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.textCellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.textCellIdentifier, forIndexPath: indexPath) as! TPTicketListTableViewCell
         
         let row = indexPath.row
         if let ticket = self.tickets?[row] {
-            cell.textLabel?.text = "\(ticket["activity_name"])"
+            cell.activityNameLabel?.text = "\(ticket["activity_name"])"
+            cell.activityDateLabel?.text = "\(ticket["activity_date"])"
         }
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 96
     }
 }
