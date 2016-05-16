@@ -38,6 +38,7 @@ class TPTicketListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         self.title = "My Tickets"
         self.addLeftBarButtonWithImage(UIImage(named: "HamburgerIcon")!)
     }
