@@ -50,6 +50,7 @@ class TPProfileViewController: UIViewController, UITextFieldDelegate, JFMinimalN
         self.confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
         self.confirmPasswordTextField.delegate = self
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         self.title = "Profile"
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TPLoginViewController.DismissKeyboard))

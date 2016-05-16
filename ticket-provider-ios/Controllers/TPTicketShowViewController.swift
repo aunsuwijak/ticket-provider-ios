@@ -40,6 +40,7 @@ class TPTicketShowViewController: UIViewController {
         self.ticketDateLabel.text = formatter.stringFromDate(activityDate!)
         
         self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         self.title = "\(ticket!["activity_name"])"
     }
     
