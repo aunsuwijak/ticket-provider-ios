@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let leftViewController = storyboard.instantiateViewControllerWithIdentifier("TPSidedrawer") as! TPSidedrawerViewController
         
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-        
         let slideMenuController = TPSlideMenuController(mainViewController: nvc, leftMenuViewController: leftViewController)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
