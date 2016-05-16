@@ -159,6 +159,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="progressBar" destination="brd-Ul-hHc" id="F8d-4A-OC8"/>
@@ -471,6 +472,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="IQLayoutGuideConstraint" destination="u9Q-Ty-y7X" id="TFK-PA-fdJ"/>
@@ -942,6 +944,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="IQLayoutGuideConstraint" destination="I9b-Ol-NNp" id="ICt-jZ-pkO"/>
@@ -1319,6 +1322,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emailLabel" destination="sSc-Ii-BMv" id="wT0-ek-8xf"/>
@@ -1466,6 +1470,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ticketListTableView" destination="yEN-zs-FE4" id="tIW-1H-vpw"/>
@@ -1920,6 +1925,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="IQLayoutGuideConstraint" destination="MhU-Dm-7wi" id="bTg-Y2-QE0"/>
@@ -1946,6 +1952,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Z0F-Rj-S9s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ed0-sh-EqX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-AK-Rob" userLabel="TicketImage">
@@ -2046,30 +2053,30 @@
                                 <exclude reference="zqS-b8-5Ox"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4zd-gi-dDh"/>
-                                <exclude reference="GIc-1e-5pi"/>
-                                <exclude reference="a86-Ok-cBl"/>
+                                <exclude reference="K2H-SD-ds5"/>
+                                <exclude reference="Pr8-1h-2Yt"/>
+                                <exclude reference="d0G-hk-vEN"/>
                                 <exclude reference="RM4-SI-ybi"/>
                                 <exclude reference="in7-mH-Nne"/>
                                 <exclude reference="ufw-Yo-JVo"/>
+                                <exclude reference="CnV-KF-l7I"/>
+                                <exclude reference="ITR-bw-KvR"/>
+                                <exclude reference="bfE-a9-uZf"/>
                                 <exclude reference="UcW-dQ-vP6"/>
                                 <exclude reference="Y9s-lU-M5G"/>
                                 <exclude reference="kKq-u4-577"/>
                                 <exclude reference="8b4-L7-XMR"/>
                                 <exclude reference="VgO-f2-ifS"/>
                                 <exclude reference="xJ9-tB-00s"/>
-                                <exclude reference="CnV-KF-l7I"/>
-                                <exclude reference="ITR-bw-KvR"/>
-                                <exclude reference="bfE-a9-uZf"/>
-                                <exclude reference="K2H-SD-ds5"/>
-                                <exclude reference="Pr8-1h-2Yt"/>
-                                <exclude reference="d0G-hk-vEN"/>
                                 <exclude reference="RqU-7Y-POz"/>
                                 <exclude reference="ieW-f0-g6r"/>
                                 <exclude reference="zCm-zr-M7E"/>
                                 <exclude reference="UdY-QA-yG7"/>
                                 <exclude reference="iuU-6b-zIc"/>
                                 <exclude reference="reU-Lc-ecb"/>
+                                <exclude reference="4zd-gi-dDh"/>
+                                <exclude reference="GIc-1e-5pi"/>
+                                <exclude reference="a86-Ok-cBl"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2084,33 +2091,34 @@
                                 <include reference="zqS-b8-5Ox"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4zd-gi-dDh"/>
-                                <include reference="GIc-1e-5pi"/>
-                                <include reference="a86-Ok-cBl"/>
+                                <include reference="K2H-SD-ds5"/>
+                                <include reference="Pr8-1h-2Yt"/>
+                                <include reference="d0G-hk-vEN"/>
                                 <include reference="RM4-SI-ybi"/>
                                 <include reference="in7-mH-Nne"/>
                                 <include reference="ufw-Yo-JVo"/>
+                                <include reference="CnV-KF-l7I"/>
+                                <include reference="ITR-bw-KvR"/>
+                                <include reference="bfE-a9-uZf"/>
                                 <include reference="UcW-dQ-vP6"/>
                                 <include reference="Y9s-lU-M5G"/>
                                 <include reference="kKq-u4-577"/>
                                 <include reference="8b4-L7-XMR"/>
                                 <include reference="VgO-f2-ifS"/>
                                 <include reference="xJ9-tB-00s"/>
-                                <include reference="CnV-KF-l7I"/>
-                                <include reference="ITR-bw-KvR"/>
-                                <include reference="bfE-a9-uZf"/>
-                                <include reference="K2H-SD-ds5"/>
-                                <include reference="Pr8-1h-2Yt"/>
-                                <include reference="d0G-hk-vEN"/>
                                 <include reference="RqU-7Y-POz"/>
                                 <include reference="ieW-f0-g6r"/>
                                 <include reference="zCm-zr-M7E"/>
                                 <include reference="UdY-QA-yG7"/>
                                 <include reference="iuU-6b-zIc"/>
                                 <include reference="reU-Lc-ecb"/>
+                                <include reference="4zd-gi-dDh"/>
+                                <include reference="GIc-1e-5pi"/>
+                                <include reference="a86-Ok-cBl"/>
                             </mask>
                         </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="activityNameLabel" destination="KLs-Rk-wVl" id="Wl8-2L-03h"/>
