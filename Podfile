@@ -13,4 +13,6 @@ pod 'JFMinimalNotifications', '~> 0.0.7'
 pod 'IQKeyboardManagerSwift', '4.0.2'
 pod 'SlideMenuControllerSwift'
 pod 'SwiftHEXColors'
+pod 'Fabric'
+pod 'Crashlytics'
 
