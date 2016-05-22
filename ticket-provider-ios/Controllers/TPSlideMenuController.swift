@@ -11,4 +11,12 @@ import SlideMenuControllerSwift
 
 class TPSlideMenuController: SlideMenuController {
     
+    override func track(trackAction: TrackAction) {
+        switch trackAction {
+        case .LeftTapOpen:
+            (self.leftViewController as! TPSidedrawerViewController).updateProfile()
+            break
+        default: break
+        }
+    }
 }

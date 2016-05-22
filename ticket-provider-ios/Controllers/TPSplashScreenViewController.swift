@@ -21,7 +21,6 @@ class TPSplashScreenViewController: UIViewController {
         
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(TPSplashScreenViewController.updateProgress), userInfo: nil, repeats: true)
         
-        
         let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
         let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
         
