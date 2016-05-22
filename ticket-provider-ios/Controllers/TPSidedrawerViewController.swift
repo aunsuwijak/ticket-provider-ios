@@ -28,25 +28,33 @@ class TPSidedrawerViewController: UIViewController {
         self.profileViewController = UINavigationController(rootViewController: profileVC)
         self.ticketListViewController = UINavigationController(rootViewController: ticketListVC)
         self.splashScreenViewController = UINavigationController(rootViewController: splashVC)
-        
-        TPHttpManager.sharedInstance.currentUser(
-            {
-                responseCode, data in
-                if responseCode == 200 {
-                    self.nameLabel.text = "\(data["user"]["name"])"
-                    self.emailLabel.text = "\(data["user"]["email"])"
-                } else {
-                    // TODO: Handle this error
-                }
-            }, errorBlock: {
-                // TODO: Handle this error
-        })
     }
     
     override func viewDidAppear(animated: Bool) {
         self.profileIcon.layer.cornerRadius = self.profileIcon.frame.size.height / 2
         self.profileIcon.layer.masksToBounds = true
         self.profileIcon.layer.borderWidth = 0
+    }
+    
+    func updateProfile() {
+        let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.ACCESS_TOKEN)
+        let tokenType = NSUserDefaults.standardUserDefaults().valueForKey(TPConstants.TOKEN_TYPE)
+        
+        if accessToken != nil && tokenType != nil {
+            TPHttpManager.sharedInstance.currentUser(
+                {
+                    responseCode, data in
+                    if responseCode == 200 {
+                        self.nameLabel.text = "\(data["user"]["name"])"
+                        self.emailLabel.text = "\(data["user"]["email"])"
+                    } else {
+                        // TODO: Handle this error
+                    }
+                }, errorBlock: {
+                    // TODO: Handle this error
+            })
+        }
+
     }
     
     @IBAction func navigateToProfile(sender: AnyObject) {
